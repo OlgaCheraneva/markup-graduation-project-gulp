@@ -10,8 +10,7 @@
         --bg-ellipse-offset-y: calc(100% + 105px);
         background: url(../img/ellipse-tablet.svg);
         background-repeat: no-repeat;
-        background-position: var(--bg-ellipse-offset-x)
-            var(--bg-ellipse-offset-y);
+        background-position: var(--bg-ellipse-offset-x) var(--bg-ellipse-offset-y);
     }
     .intro__inner-left {
         padding: 0;

@@ -22,14 +22,7 @@
 }
 
 .curly-brackets {
-    transform: matrix(
-        0.72159603080403,
-        0.37432663296015,
-        -0.37432663296015,
-        0.72159603080403,
-        0,
-        0
-    );
+    transform: matrix( 0.72159603080403, 0.37432663296015, -0.37432663296015, 0.72159603080403, 0, 0);
     animation: moveCurlyBrackets 2s 1s ease-out forwards;
 }
 
@@ -42,14 +35,7 @@
 }
 
 .hashtag {
-    transform: matrix(
-        0.91532249290851,
-        0.26083794888422,
-        -0.26083794888422,
-        0.91532249290852,
-        0,
-        0
-    );
+    transform: matrix( 0.91532249290851, 0.26083794888422, -0.26083794888422, 0.91532249290852, 0, 0);
     animation: moveHashtag 2s 1s ease-out forwards;
 }
 
@@ -62,14 +48,7 @@
 }
 
 .brackets-with-slash {
-    transform: matrix(
-        0.62913254694498,
-        -0.25657231186215,
-        0.25657231186215,
-        0.62913254694498,
-        0,
-        0
-    );
+    transform: matrix( 0.62913254694498, -0.25657231186215, 0.25657231186215, 0.62913254694498, 0, 0);
     animation: moveBracketsWithSlash 2s 1s ease-out forwards;
 }
 
@@ -86,14 +65,7 @@
 }
 
 .top-div-tag {
-    transform: matrix(
-        0.48280448948131,
-        -0.12214047770298,
-        0.12214047770298,
-        0.48280448948131,
-        0,
-        0
-    );
+    transform: matrix( 0.48280448948131, -0.12214047770298, 0.12214047770298, 0.48280448948131, 0, 0);
     animation: moveTopDivTag 2s 1s ease-out forwards;
 }
 
@@ -106,14 +78,7 @@
 }
 
 .bottom-div-tag {
-    transform: matrix(
-        0.58798214978162,
-        0.21554688540119,
-        -0.21554688540119,
-        0.58798214978162,
-        0,
-        0
-    );
+    transform: matrix( 0.58798214978162, 0.21554688540119, -0.21554688540119, 0.58798214978162, 0, 0);
     animation: moveBottomDivTag 2s 1s ease-out forwards;
 }
 
@@ -134,14 +99,7 @@
         font-size: 5.859vw;
     }
     .curly-brackets {
-        transform: matrix(
-            0.72159603080403,
-            0.37432663296015,
-            -0.37432663296015,
-            0.72159603080403,
-            0,
-            0
-        );
+        transform: matrix( 0.72159603080403, 0.37432663296015, -0.37432663296015, 0.72159603080403, 0, 0);
         animation: moveCurlyBrackets 2s 1s ease-out forwards;
     }
     @keyframes moveCurlyBrackets {
@@ -152,14 +110,7 @@
         }
     }
     .hashtag {
-        transform: matrix(
-            0.91532249290851,
-            0.26083794888422,
-            -0.26083794888422,
-            0.91532249290852,
-            0,
-            0
-        );
+        transform: matrix( 0.91532249290851, 0.26083794888422, -0.26083794888422, 0.91532249290852, 0, 0);
         animation: moveHashtag 2s 1s ease-out forwards;
     }
     @keyframes moveHashtag {
@@ -170,14 +121,7 @@
         }
     }
     .brackets-with-slash {
-        transform: matrix(
-            0.75071668916306,
-            0.18406909437483,
-            -0.18406909437483,
-            0.75071668916306,
-            0,
-            0
-        );
+        transform: matrix( 0.75071668916306, 0.18406909437483, -0.18406909437483, 0.75071668916306, 0, 0);
         animation: moveBracketsWithSlash 2s 1s ease-out forwards;
     }
     @keyframes moveBracketsWithSlash {
@@ -188,14 +132,7 @@
         }
     }
     .bottom-brackets-with-slash {
-        transform: matrix(
-            0.62913254694498,
-            -0.25657231186215,
-            0.25657231186215,
-            0.62913254694498,
-            0,
-            0
-        );
+        transform: matrix( 0.62913254694498, -0.25657231186215, 0.25657231186215, 0.62913254694498, 0, 0);
         display: block;
         animation: moveBottomBracketsWithSlash 2s 1s ease-out forwards;
     }
@@ -207,14 +144,7 @@
         }
     }
     .top-div-tag {
-        transform: matrix(
-            0.48280448948131,
-            -0.12214047770298,
-            0.12214047770298,
-            0.48280448948131,
-            0,
-            0
-        );
+        transform: matrix( 0.48280448948131, -0.12214047770298, 0.12214047770298, 0.48280448948131, 0, 0);
         animation: moveTopDivTag 2s 1s ease-out forwards;
     }
     @keyframes moveTopDivTag {
@@ -225,14 +155,7 @@
         }
     }
     .bottom-div-tag {
-        transform: matrix(
-            0.58798214978162,
-            0.21554688540119,
-            -0.21554688540119,
-            0.58798214978162,
-            0,
-            0
-        );
+        transform: matrix( 0.58798214978162, 0.21554688540119, -0.21554688540119, 0.58798214978162, 0, 0);
         animation: moveBottomDivTag 2s 1s ease-out forwards;
     }
     @keyframes moveBottomDivTag {
@@ -255,14 +178,7 @@
         font-size: 14vw;
     }
     .curly-brackets {
-        transform: matrix(
-            0.36740269927945,
-            0.19058948426935,
-            -0.19058948426935,
-            0.36740269927945,
-            0,
-            0
-        );
+        transform: matrix( 0.36740269927945, 0.19058948426935, -0.19058948426935, 0.36740269927945, 0, 0);
         animation: moveCurlyBrackets 2s 1s ease-out forwards;
     }
     @keyframes moveCurlyBrackets {
@@ -273,14 +189,7 @@
         }
     }
     .hashtag {
-        transform: matrix(
-            0.46238977293659,
-            0.13176645487491,
-            -0.13176645487491,
-            0.46238977293659,
-            0,
-            0
-        );
+        transform: matrix( 0.46238977293659, 0.13176645487491, -0.13176645487491, 0.46238977293659, 0, 0);
         animation: moveHashtag 2s 1s ease-out forwards;
     }
     @keyframes moveHashtag {
@@ -291,14 +200,7 @@
         }
     }
     .brackets-with-slash {
-        transform: matrix(
-            0.26823714401995,
-            -0.16460249330364,
-            0.1653324505919,
-            0.26497828676839,
-            0,
-            0
-        );
+        transform: matrix( 0.26823714401995, -0.16460249330364, 0.1653324505919, 0.26497828676839, 0, 0);
         animation: moveBracketsWithSlash 2s 1s ease-out forwards;
     }
     @keyframes moveBracketsWithSlash {
@@ -309,14 +211,7 @@
         }
     }
     .div-tag {
-        transform: matrix(
-            0.23758986125219,
-            0.0870974648037,
-            -0.0870974648037,
-            0.23758986125219,
-            0,
-            0
-        );
+        transform: matrix( 0.23758986125219, 0.0870974648037, -0.0870974648037, 0.23758986125219, 0, 0);
         animation: moveDivTag 2s 1s ease-out forwards;
     }
     @keyframes moveDivTag {

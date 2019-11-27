@@ -28,15 +28,13 @@
     .menu-button span:nth-child(1) {
         top: 0;
     }
-    .menu-button span:nth-child(2),
-    .menu-button span:nth-child(3) {
+    .menu-button span:nth-child(2), .menu-button span:nth-child(3) {
         top: 40%;
     }
     .menu-button span:nth-child(4) {
         top: 80%;
     }
-    .menu-button.open span:nth-child(1),
-    .menu-button.open span:nth-child(4) {
+    .menu-button.open span:nth-child(1), .menu-button.open span:nth-child(4) {
         top: 40%;
         width: 0%;
         left: 50%;
@@ -48,6 +46,7 @@
         transform: rotate(-45deg);
     }
 }
+
 @media (max-width: 425px) {
     .menu-button {
         width: 24px;

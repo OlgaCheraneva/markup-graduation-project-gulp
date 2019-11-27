@@ -4,20 +4,25 @@
     justify-content: center;
     position: relative;
 }
+
 .carousel {
     width: calc(100% + 30px);
 }
+
 .slick-list {
     padding: 20px 0;
 }
+
 .card {
     box-sizing: border-box;
     transition: transform 0.5s;
     margin: 0 15px;
 }
+
 .card:hover {
     transform: translateZ(0) scale(1.1);
 }
+
 .arrow {
     width: 60px;
     height: 60px;
@@ -32,36 +37,42 @@
     position: absolute;
     transition: transform 0.5s;
 }
+
 .arrow:focus {
     outline: none;
 }
+
 .arrow_left {
     transform: translate3d(-50%, 50%, 0);
     left: 0;
     top: calc(41% - 60px);
 }
+
 .arrow_left:hover {
     transform: translate3d(-50%, 50%, 0) scale(1.1);
     animation: moveArrow 1s infinite;
 }
+
 .arrow_right {
     transform: rotate(180deg) translate3d(-50%, 50%, 0);
     right: 0;
     top: 41%;
 }
+
 .arrow_right:hover {
     transform: rotate(180deg) translate3d(-50%, 50%, 0) scale(1.1);
     animation: moveArrow 1s infinite;
 }
+
 @keyframes moveArrow {
-    0%,
-    100% {
+    0%, 100% {
         background-position-x: 60%;
     }
     70% {
         background-position-x: 20%;
     }
 }
+
 @media (max-width: 1024px) {
     .arrow {
         display: none;
@@ -86,12 +97,14 @@
         display: none;
     }
 }
+
 @media (max-width: 768px) {
     .slick-dots li {
         width: 13px;
         height: 13px;
     }
 }
+
 @media (max-width: 320px) {
     .slick-dots li {
         width: 10px;

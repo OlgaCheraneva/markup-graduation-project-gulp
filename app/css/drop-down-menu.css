@@ -30,6 +30,7 @@
         background: #e95e7a45;
     }
 }
+
 @media (max-width: 768px) {
     .nav__link {
         padding: 20px;
