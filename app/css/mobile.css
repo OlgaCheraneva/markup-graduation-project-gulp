@@ -51,12 +51,17 @@
         padding: 0 6% 19%;
         font-size: 5vw;
     }
+    .examples {
+        background: #fbfbfb;
+    }
     .examples__inner {
-        padding: 67px 0 51px;
+        padding: 0 0 51px;
+        margin-top: 67px;
     }
     .examples__header {
         font-size: 30px;
         width: 100%;
+        margin: 50px 0 45px;
         text-align: center;
     }
     .examples__list-wrapper {
@@ -66,7 +71,6 @@
         padding: 0 0 17px;
     }
     .example__img {
-        height: 78.125vw;
         padding-bottom: 17px;
     }
     .example__name {

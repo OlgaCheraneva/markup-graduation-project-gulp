@@ -87,34 +87,28 @@ $(function() {
     new Inputmask('+7 999-999-99-99').mask($('.phone-number-input'));
 
     // Carousel
-    $('.carousel').slick({
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        prevArrow: $('[data-action="slideLeft"]'),
-        nextArrow: $('[data-action="slideRight"]'),
-        responsive: [
-            {
-                breakpoint: 1025,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true,
-                    arrows: false
-                }
+    new Swiper('.swiper-container', {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 1,
+        navigation: {
+            nextEl: '[data-action="slideRight"]',
+            prevEl: '[data-action="slideLeft"]'
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+        breakpoints: {
+            520: {
+                slidesPerView: 2,
+                spaceBetween: 30
             },
-            {
-                breakpoint: 520,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true,
-                    arrows: false
-                }
+            1025: {
+                slidesPerView: 3,
+                spaceBetween: 30
             }
-        ]
+        }
     });
 
     // Prices section animation

@@ -1,22 +1,16 @@
+.swiper {
+    width: 100%;
+    position: relative;
+    margin-bottom: 37px;
+}
+
 .carousel-wrapper {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-.carousel {
-    width: calc(100% + 30px);
-}
-
-.slick-list {
-    padding: 20px 0;
 }
 
 .card {
     box-sizing: border-box;
     transition: transform 0.5s;
-    margin: 0 15px;
 }
 
 .card:hover {
@@ -36,6 +30,7 @@
     cursor: pointer;
     position: absolute;
     transition: transform 0.5s;
+    z-index: 1;
 }
 
 .arrow:focus {
@@ -45,7 +40,7 @@
 .arrow_left {
     transform: translate3d(-50%, 50%, 0);
     left: 0;
-    top: calc(41% - 60px);
+    top: 31.6%;
 }
 
 .arrow_left:hover {
@@ -54,14 +49,18 @@
 }
 
 .arrow_right {
-    transform: rotate(180deg) translate3d(-50%, 50%, 0);
+    transform: rotate(180deg) translate3d(-50%, 20%, 0);
     right: 0;
     top: 41%;
 }
 
 .arrow_right:hover {
-    transform: rotate(180deg) translate3d(-50%, 50%, 0) scale(1.1);
+    transform: rotate(180deg) translate3d(-50%, 20%, 0) scale(1.1);
     animation: moveArrow 1s infinite;
+}
+
+.swiper-pagination {
+    display: none;
 }
 
 @keyframes moveArrow {
@@ -77,38 +76,33 @@
     .arrow {
         display: none;
     }
-    .slick-list {
-        padding: 17px 0;
+    .swiper-pagination {
+        display: block;
     }
-    .slick-dots li {
+    .swiper-pagination-bullet {
         width: 18px;
         height: 18px;
         border-radius: 50%;
-        margin: 0 15px;
+        margin: 0 15px !important;
         background: #ebebeb;
+        opacity: 1;
     }
-    .slick-dots li:nth-last-child(-n + 3) {
-        display: none;
-    }
-    .slick-dots .slick-active {
+    .swiper-pagination-bullet-active {
         background: #ff4e2e;
-    }
-    .slick-dots button::before {
-        display: none;
     }
 }
 
 @media (max-width: 768px) {
-    .slick-dots li {
+    .swiper-pagination-bullet {
         width: 13px;
         height: 13px;
     }
 }
 
 @media (max-width: 320px) {
-    .slick-dots li {
+    .swiper-pagination-bullet {
         width: 10px;
         height: 10px;
-        margin: 0 2.7%;
+        margin: 0 2.7%!important;
     }
 }

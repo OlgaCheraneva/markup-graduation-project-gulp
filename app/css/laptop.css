@@ -47,13 +47,14 @@
         padding: 0 81px;
     }
     .examples__list-wrapper {
-        padding-bottom: 95px;
+        padding-bottom: 133px;
+        margin-bottom: 49px;
     }
     .examples__list {
-        padding: 37px 0 79px;
+        padding: 57px 0 0;
     }
     .example__img {
-        padding-bottom: 20px;
+        padding-bottom: 16px;
     }
     .example__name {
         font-size: 2.441vw;

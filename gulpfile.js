@@ -20,9 +20,8 @@ gulp.task('css', () => {
 gulp.task('styles', function() {
     return gulp
         .src([
-            'node_modules/slick-carousel/slick/slick-theme.css',
             'node_modules/normalize.css/normalize.css',
-            'node_modules/slick-carousel/slick/slick.css',
+            'node_modules/swiper/css/swiper.min.css',
             'app/css/fontawesome.min.css',
             'app/css/solid.min.css',
             'app/css/style.css',
@@ -72,7 +71,7 @@ gulp.task('scripts', function() {
     return gulp
         .src([
             'node_modules/jquery/dist/jquery.min.js',
-            'node_modules/slick-carousel/slick/slick.min.js',
+            'node_modules/swiper/js/swiper.min.js',
             'node_modules/inputmask/dist/min/jquery.inputmask.bundle.min.js',
             'node_modules/body-scroll-lock/lib/bodyScrollLock.min.js',
             'app/js/index.js'
@@ -89,7 +88,16 @@ gulp.task('serve', function() {
         server: 'app/'
     });
 
-    gulp.watch('app/**').on('change', browserSync.reload);
+    gulp.watch('app/index.html').on('change', browserSync.reload);
+    gulp.watch('app/img/**').on('change', browserSync.reload);
+    gulp.watch(['app/css/**', '!app/**/*.min.**']).on(
+        'change',
+        gulp.series('styles', browserSync.reload)
+    );
+    gulp.watch(['app/js/**', '!app/**/*.min.**']).on(
+        'change',
+        gulp.series('scripts', browserSync.reload)
+    );
 });
 
 gulp.task(

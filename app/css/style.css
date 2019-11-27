@@ -136,15 +136,16 @@ button {
     margin-top: 95px;
 }
 
-.tablet-intro {
-    display: none;
-    color: #fff;
-}
-
 /* Tablet Intro */
 
 .tablet-intro {
+    display: none;
+    color: #fff;
     position: relative;
+}
+
+.tablet-intro__header {
+    display: none;
 }
 
 /* Intro */
@@ -222,7 +223,7 @@ button {
 }
 
 .examples__list {
-    padding: 37px 0 75px;
+    padding: 57px 0;
 }
 
 .example__link {
@@ -233,7 +234,7 @@ button {
 .example__img {
     width: 100%;
     object-fit: cover;
-    padding-bottom: 34px;
+    padding-bottom: 30px;
 }
 
 .example__name {
