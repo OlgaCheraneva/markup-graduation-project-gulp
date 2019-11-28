@@ -1,12 +1,12 @@
 $(function() {
     // Header
-    const header = document.querySelector('.header');
+    const header = $('.header');
     const headerClass = 'header_translucent-bg';
 
-    document.addEventListener('scroll', function() {
-        window.scrollY > header.offsetHeight
-            ? header.classList.add(headerClass)
-            : header.classList.remove(headerClass);
+    $(window).on('scroll', function() {
+        $(window).scrollTop() > header.outerHeight()
+            ? header.addClass(headerClass)
+            : header.removeClass(headerClass);
     });
 
     // Menu
@@ -25,9 +25,9 @@ $(function() {
     const activeClassesBreakpoint = 1024.98;
     const activeClasses = ['nav__link_active', 'bold-on-hover_underlined'];
     handleBoldOnHover();
-    $(window).resize(handleBoldOnHover);
+    $(window).on('resize', handleBoldOnHover);
     function handleBoldOnHover() {
-        if (window.innerWidth < activeClassesBreakpoint) {
+        if ($(window).width() < activeClassesBreakpoint) {
             removeActiveClasses();
             $('.nav__link').removeClass('bold-on-hover');
         } else {
@@ -35,8 +35,7 @@ $(function() {
         }
     }
 
-    $('.nav__link').on('click', handleMenuClick);
-    $('.footer__nav-link').on('click', handleMenuClick);
+    $('.nav__link, .footer__nav-link').on('click', handleMenuClick);
 
     function handleMenuClick(e) {
         e.preventDefault();
@@ -112,24 +111,26 @@ $(function() {
     });
 
     // Prices section animation
-    const section = document.querySelector('.prices');
-    const sectionElements = document.querySelector('.prices__elements');
+    const section = $('.prices');
+    const sectionElements = $('.prices__elements');
     const animationClassName = 'prices__elements_animated';
 
     function isSectionEntirelyVisible(section) {
-        const {height, y} = section.getBoundingClientRect();
-        return y > 0 && y + height < window.innerHeight;
+        const height = section.height();
+        const y = section.offset().top - $(window).scrollTop();
+        return y > 0 && y + height < $(window).height();
     }
 
     function isSectionEntirelyInvisible(section) {
-        const {bottom, top} = section.getBoundingClientRect();
-        return bottom < 0 || top > window.innerHeight;
+        const top = section.offset().top - $(window).scrollTop();
+        const bottom = top + section.outerHeight();
+        return bottom < 0 || top > $(window).height();
     }
 
-    document.addEventListener('scroll', function() {
+    $(window).on('scroll', function() {
         if (isSectionEntirelyVisible(section))
-            sectionElements.classList.add(animationClassName);
+            sectionElements.addClass(animationClassName);
         if (isSectionEntirelyInvisible(section))
-            sectionElements.classList.remove(animationClassName);
+            sectionElements.removeClass(animationClassName);
     });
 });

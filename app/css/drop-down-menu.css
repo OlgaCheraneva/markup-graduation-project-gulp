@@ -1,8 +1,6 @@
 @media (max-width: 1024px) {
     .nav {
         display: none;
-    }
-    .nav {
         position: absolute;
         top: 99%;
         right: 0;
