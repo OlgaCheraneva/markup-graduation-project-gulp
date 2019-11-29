@@ -50,14 +50,14 @@ button {
 }
 
 .bold-on-hover::before {
+    text-shadow: 0 0 1px currentColor;
     background: inherit;
     position: absolute;
     width: 100%;
     height: 100%;
     content: attr(data-text);
-    opacity: 0;
-    font-weight: bold;
     transition: opacity 0.3s ease-out;
+    opacity: 0;
 }
 
 .bold-on-hover:hover::before {

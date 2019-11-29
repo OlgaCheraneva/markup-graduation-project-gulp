@@ -85,6 +85,25 @@ $(function() {
     // Input mask
     new Inputmask('+7 999-999-99-99').mask($('.phone-number-input'));
 
+    // Forms
+    $('.dialog__form').submit(function(event) {
+        event.preventDefault();
+
+        $.ajax({
+            type: 'POST',
+            url: 'mail.php',
+            data: $(this).serialize(),
+            success: () => {
+                alert('Отправлено');
+            },
+            error: () => {
+                alert('Возникла ошибка');
+            }
+        });
+
+        $(this).trigger('reset');
+    });
+
     // Carousel
     new Swiper('.swiper-container', {
         loop: true,
