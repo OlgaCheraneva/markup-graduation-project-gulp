@@ -30,8 +30,13 @@ $(function() {
         if ($(window).width() < activeClassesBreakpoint) {
             removeActiveClasses();
             $('.nav__link').removeClass('bold-on-hover');
+            menu.attr('style', 'display: none;');
+            menuButton.removeClass('open');
         } else {
             $('.nav__link').addClass('bold-on-hover');
+            if (menu.attr('style') === 'display: none;') {
+                menu.attr('style', '');
+            }
         }
     }
 
@@ -72,18 +77,31 @@ $(function() {
         '.close-contact-form-dialog'
     );
     function handleDialog(dialog, openBtn, closeBtn) {
-        $(openBtn).on('click', () => {
+        $(openBtn).on('click', (e) => {
+            e.stopPropagation();
             $(dialog).addClass('dialog_open');
-            bodyScrollLock.disableBodyScroll(document.querySelector(dialog));
+            bodyScrollLock.disableBodyScroll(
+                document.querySelector('.dialog_open')
+            );
+            $(document).on('click', handleOutsideDialogClick);
         });
-        $(closeBtn).on('click', () => {
-            $(dialog).removeClass('dialog_open');
-            bodyScrollLock.enableBodyScroll(document.querySelector(dialog));
-        });
+        $(closeBtn).on('click', closeDialog);
+    }
+    function handleOutsideDialogClick(e) {
+        const dialog = $('.dialog_open .dialog__inner');
+        if (!dialog.is(e.target) && dialog.has(e.target).length === 0) {
+            closeDialog();
+        }
+    }
+    function closeDialog() {
+        bodyScrollLock.enableBodyScroll(document.querySelector('.dialog_open'));
+        $('.dialog_open .dialog__form').trigger('reset');
+        $('.dialog_open').removeClass('dialog_open');
+        $(document).unbind('click', handleOutsideDialogClick);
     }
 
     // Input mask
-    new Inputmask('+7 999-999-99-99').mask($('.phone-number-input'));
+    new Inputmask('+7 999 999-99-99').mask($('.phone-number-input'));
 
     // Forms
     $('.dialog__form').submit(function(event) {
@@ -94,6 +112,7 @@ $(function() {
             url: 'mail.php',
             data: $(this).serialize(),
             success: () => {
+                closeDialog();
                 alert('Отправлено');
             },
             error: () => {
@@ -152,4 +171,38 @@ $(function() {
         if (isSectionEntirelyInvisible(section))
             sectionElements.removeClass(animationClassName);
     });
+
+    // Share links
+
+    function setShareLinkClickHandlers(shareLink, url) {
+        shareLink.on('click', function(e) {
+            e.preventDefault();
+            window.open(url);
+        });
+    }
+
+    function setShareLinks() {
+        const url = encodeURIComponent(document.URL);
+        const title = encodeURIComponent(document.title);
+        const description = encodeURIComponent(
+            $("meta[property='og:description']").attr('content')
+        );
+
+        setShareLinkClickHandlers(
+            $('.social-network-link.vk'),
+            `http://vk.com/share.php?url=${url}&title=${title}&description=${description}`
+        );
+        setShareLinkClickHandlers(
+            $('.social-network-link.facebook'),
+            `https://www.facebook.com/sharer.php?u=${url}`
+        );
+        setShareLinkClickHandlers(
+            $('.social-network-link.twitter'),
+            `https://twitter.com/intent/tweet?url=${url}&text=${title +
+                encodeURIComponent('\n') +
+                description}`
+        );
+    }
+
+    setShareLinks();
 });

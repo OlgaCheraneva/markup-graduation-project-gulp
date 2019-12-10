@@ -91,6 +91,12 @@
     .example__name {
         font-size: 100%;
     }
+    .prices__inner {
+        padding: 9.9vw 0 10.807vw;
+    }
+    .prices__header {
+        font-size: 5.86vw;
+    }
     .footer__inner {
         justify-content: flex-start;
         flex-wrap: wrap;
