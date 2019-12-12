@@ -1,7 +1,7 @@
 <?php
 
 $method = $_SERVER['REQUEST_METHOD'];
-$admin_email = 'cheraneva197@gmail.com';
+$admin_email = 'cheraneva197@yandex.ru';
 $project_name = 'Markup Graduation Project';
 
 if ( $method === 'POST' ) {

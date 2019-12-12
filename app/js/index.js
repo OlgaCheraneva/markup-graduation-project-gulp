@@ -22,22 +22,26 @@ $(function() {
             : menu.slideUp(500);
     }
 
-    const activeClassesBreakpoint = 1024.98;
+    const menuBreakpoint = 1024.98;
     const activeClasses = ['nav__link_active', 'bold-on-hover_underlined'];
     handleBoldOnHover();
     $(window).on('resize', handleBoldOnHover);
+    let currentWidth, previousWidth;
     function handleBoldOnHover() {
-        if ($(window).width() < activeClassesBreakpoint) {
+        currentWidth = $(window).width();
+        if (currentWidth < menuBreakpoint && previousWidth >= menuBreakpoint) {
             removeActiveClasses();
             $('.nav__link').removeClass('bold-on-hover');
             menu.attr('style', 'display: none;');
             menuButton.removeClass('open');
-        } else {
+        }
+        if (currentWidth >= menuBreakpoint && previousWidth < menuBreakpoint) {
             $('.nav__link').addClass('bold-on-hover');
             if (menu.attr('style') === 'display: none;') {
                 menu.attr('style', '');
             }
         }
+        previousWidth = currentWidth;
     }
 
     $('.nav__link, .footer__nav-link').on('click', handleMenuClick);
